@@ -11,7 +11,7 @@
 
 ## Current Articles
 
-- [ ] Complete links in: [Reference Documentation](reference_docs.md)
+- [x] Complete links in: [Reference Documentation](reference_docs.md)
 
 ## New Articles
 
