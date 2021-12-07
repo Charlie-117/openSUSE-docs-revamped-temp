@@ -9,8 +9,8 @@
 
 ### Setup the driver
 
-#### With Yast
-1. Go to _YAsT2_.
+#### With YaST
+1. Go to _YaST2_.
 2. Then _Software Management_.
 3. On the menu, click __Configuration__ &gt; __Repositories__... (or do `Ctrl + R`).
 4. Click __Add__ &gt; __Community Repositories__.
@@ -43,7 +43,7 @@ Sometimes, installing NVIDIA through zypper is not what you want because you wan
 3. Do note that NVIDIA has two "download types"; the new feature branch and production branch. Download NVIDIA.run or `nvidia-installer` with your chosen download type through your browser or through `curl` or `wget` from either of these websites:
   - https://www.nvidia.com/Download/
   - https://http.download.nvidia.com/XFree86/nvidia-installer/
-4. Let's say you downloaded NVIDIA into your `$HOME` from the new feature branch which as of writing is NVIDIA 495.44, you will get the `NVIDIA-Linux-x86_64-495.44.run`. Then run `sudo sh -c "$HOME/NVIDIA-Linux-x86_64-495.44.run -e"` for expert mode. Choose the things you needed from the install.
+4. Let's say you downloaded NVIDIA into your `$HOME` from the new feature branch which as of writing is NVIDIA 495.44, you will get the `NVIDIA-Linux-x86_64-495.44.run`. Then run `sudo sh -c "$HOME/NVIDIA-Linux-x86_64-495.44.run -e"` for expert mode. Choose the required things from the install.
 5. Once done, run `sudo mkinitrd` which calls dracut to regenerate the initramfs to make sure the NVIDIA modules are installed.
 6. Disabling the nouveau can already be done when installing NVIDIA-Linux.XXX.xx.run. But in case you want to disable it manually, disable the nouveau driver by adding this to your kernel parameters `rd.driver.blacklist=nouveau nouveau.modeset=0` in `/etc/default/grub` or blacklisting it by running `# echo "blacklist nouveau" >> /etc/modprobe.d/nouveau-blacklist.conf`. If you did the former, run `sudo grub2-mkconfig -o /boot/grub/grub.cfg`.
 7. Reboot.
